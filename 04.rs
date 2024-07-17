@@ -54,10 +54,11 @@ impl Ship {
         if(f64::abs(a)<0.1){
             debug!("stop");
             turn(f64::signum(a) * f64::consts::PI/10.0);
-            fire(0);
+
+            if f64::abs(a) < 0.01 {
+                fire(0);
+            }
         }
 
-        
-        
     }
 }
